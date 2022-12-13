@@ -24,7 +24,7 @@
 #! Display the whole string, but starting from the end of the string.
 # print(myString2[::-1])
 
-#! Lesson 2
+# Lesson 2
 
 #! We use "and" instead of "&&" in Python.
 #print(x >= 5 and y >= x)
@@ -40,3 +40,13 @@
 # print(f"Value p: {p}")
 
 #! If we want to find remaining from the division. Use "%" expression.
+
+# Lesson 3
+
+# ! If we put the "*" in front of the defined argument. That meaning is user can write as many elements as user want. But usually we don't use any word after the "*". Programmers write "args" for that expression.
+# def summation3(*args):
+#    return sum(args)
+
+# ! "**kwargs" keyword argument will give to us dictionary formatting result. The critical point is "**" double stars. Actually, It does everything.
+# def example_func(**kwargs):
+#    print(kwargs)
