@@ -50,3 +50,10 @@
 # ! "**kwargs" keyword argument will give to us dictionary formatting result. The critical point is "**" double stars. Actually, It does everything.
 # def example_func(**kwargs):
 #    print(kwargs)
+
+# ! Map function take the elements of the list. And put them in the defined function. Lastly, again put them in list.
+#print(list(map(divide, myList)))
+
+# Filter
+#! Filter function create a list and if return True value, It will put the list returned value. If return False value, will do nothing.
+#print(list(filter(controlString3, myCityList)))
