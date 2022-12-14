@@ -57,3 +57,16 @@
 # Filter
 #! Filter function create a list and if return True value, It will put the list returned value. If return False value, will do nothing.
 #print(list(filter(controlString3, myCityList)))
+
+
+# Decorator
+
+# ! We can call the function inside a another function too.
+#decoratorFunc = decoratorFunciton(func2)
+# decoratorFunc()
+
+#! There is a shortcut here. We don't have to do confused steps, if we define the function "@decoratorFunc" pyhton will do same steps in background.
+# @decoratorFunciton
+# def func2():
+#    print("Hello World")
+# func2()
