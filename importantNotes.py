@@ -78,3 +78,15 @@
 #    def __init__(self, name, age):
 #        self.name = name
 #        self.age = age
+
+# ! Normally we put the instance in print(), we could not get the attributes. But if we use the "__str__" method and put the inside of "print()". We will see that inside the __str__ method.
+# def __str__(self):
+#    return f"{self.name} has {self.calories}"
+
+# ! At the same time, we can use the __len__ method too. Using sytnax similiar to other special methods.
+# def __len__(self):
+#    return self.calories
+
+#! There are more than these special methods. If you see "Dunder Methods" don't be shock. At the same time, they say "Dunder Methods" too. You reach them with that links;
+# https://www.informit.com/articles/article.aspx?p=453682&seqNum=6
+# https://www.section.io/engineering-education/dunder-methods-python/
