@@ -1,6 +1,6 @@
 import base64
 import socket
-import json
+import simplejson
 
 
 class SocketListener:
@@ -14,15 +14,15 @@ class SocketListener:
         print("Connection connected from " + str(myAddress))
 
     def jsonSend(self, data):
-        jsonData = json.dumps(data)
-        self.myConnection.send(jsonData)
+        jsonData = simplejson.dumps(data)
+        self.myConnection.send(jsonData.encode("utf-8"))
 
     def jsonReceive(self):
         jsonData = ""
         while True:
             try:
-                jsonData = jsonData + self.myConnection.recv(1024)
-                return json.loads(jsonData)
+                jsonData = jsonData + self.myConnection.recv(1024).decode()
+                return simplejson.loads(jsonData)
             except ValueError:
                 continue
 
@@ -45,7 +45,7 @@ class SocketListener:
 
     def startListener(self):
         while True:
-            commandInput = raw_input("Enter command: ")
+            commandInput = input("Enter command: ")
             commandInput = commandInput.split(" ")
             try:
                 if commandInput[0] == "upload":
